@@ -2,20 +2,53 @@
   <header class="topHead">
     <my-button
         style="margin: auto"
-        @click="showDialog"
+        @click="showAboutSite"
     >О сайте
     </my-button>
+
     <my-button
         style="margin: auto"
-        @click="showDialog"
+        @click="showAboutMe"
     >Создатель
     </my-button>
+
     <my-button
         style="margin: auto"
-        @click="showDialog"
+        @click="showMore"
     >Посмотреть еще работы
     </my-button>
   </header>
+
+  <div>
+    <my-dialog v-model:show="AboutSite" style="text-align: center">
+      <h1>Информация о сайте</h1>
+      <p style="font-size: 20px">Этот сайт был написан в образовательных целях и
+      <br>является показателем умения работать с Vue3.</p>
+      <p><br>P.S. Сайт будет дорабатываться, по мере возможности.</p>
+    </my-dialog>
+
+    <my-dialog v-model:show="AboutMe" style="text-align: center">
+      <h1>Гавран Иван</h1>
+      <a href="https://www.linkedin.com/in/kisliyborsch/"
+         style="font-size: 16px;text-decoration: none;color: #da18ff"
+      >LinkedIn</a>
+      <br>
+      <a href="https://github.com/KisliY-Borsch"
+         style="font-size: 16px;text-decoration: none;color: #da18ff"
+      >GitHub</a>
+      <br>
+      <a href="https://www.instagram.com/kisliy_borsch/"
+         style="font-size: 16px;text-decoration: none;color: #da18ff"
+      >Instagram</a>
+    </my-dialog>
+
+    <my-dialog v-model:show="More" style="text-align: center">
+      <h1><a href="https://github.com/KisliY-Borsch"
+             style="text-decoration: none;color: #da18ff"
+      >Мой GitHub</a></h1>
+    </my-dialog>
+  </div>
+
   <div class="app">
     <h1>Создание поста</h1>
     <my-button
@@ -56,6 +89,9 @@ export default {
         {id: 3, title: 'JavaScript 3', body: 'Курс о JavaScript Часть 3'},
       ],
       dialogVisible: false,
+      AboutSite: false,
+      AboutMe: false,
+      More: false,
     }
   },
   methods:{
