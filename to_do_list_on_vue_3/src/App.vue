@@ -2,16 +2,21 @@
 
   <div class="app">
     <h1>Создание поста</h1>
-    <my-button @click="showDialog">Добавить пост</my-button>
+    <my-button
+        @click="showDialog"
+        style="margin: 15px 0"
+        >Добавить пост
+    </my-button>
     <my-dialog v-model:show="dialogVisible">
       <post-form
           @create="createPost"
       />
     </my-dialog>
-    <post-list
-        :posts="posts"
-        @remove = "removePost"
-    />
+    <h1>Текущие посты</h1>
+      <post-list
+          :posts="posts"
+          @remove = "removePost"
+      />
   </div>
 </template>
 
