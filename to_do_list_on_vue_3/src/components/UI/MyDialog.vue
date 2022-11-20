@@ -1,6 +1,6 @@
 <template>
   <div class="dialog" v-if="show" @click="hideDialog">
-    <div class="dialog_content">
+    <div class="dialog_content" @click="(e) => e.stopPropagation()">
       <slot></slot>
     </div>
   </div>
