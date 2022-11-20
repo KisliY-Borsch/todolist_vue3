@@ -1,5 +1,21 @@
 <template>
-
+  <header class="topHead">
+    <my-button
+        style="margin: auto"
+        @click="showDialog"
+    >О сайте
+    </my-button>
+    <my-button
+        style="margin: auto"
+        @click="showDialog"
+    >Создатель
+    </my-button>
+    <my-button
+        style="margin: auto"
+        @click="showDialog"
+    >Посмотреть еще работы
+    </my-button>
+  </header>
   <div class="app">
     <h1>Создание поста</h1>
     <my-button
@@ -52,6 +68,15 @@ export default {
     showDialog(){
       this.dialogVisible = true;
     },
+    showAboutSite(){
+      this.AboutSite = true;
+    },
+    showAboutMe(){
+      this.AboutMe = true;
+    },
+    showMore(){
+      this.More = true;
+    }
   }
 }
 </script>
@@ -64,5 +89,10 @@ export default {
 }
 .app{
   padding: 20px;
+}
+.topHead{
+  display: flex;
+  justify-content: space-around;
+  background: darkslategrey;
 }
 </style>
